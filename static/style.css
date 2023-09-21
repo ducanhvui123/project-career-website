@@ -1,0 +1,46 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+h1
+{
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 40px;
+    font-weight: bolder;
+    color: #8B4513;
+    text-align: center;
+}
+
+#banner
+{
+    height: 360px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+h2
+{
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    color: #8B4513;
+    text-align: center;
+}
+
+.about
+{
+    font-family: 'MedievalSharp', cursive;
+    font-size: 15px;
+    font-weight: normal;
+    color: #000080;
+    text-align: center;
+}
+
+#container
+{
+    max-width: 720px;
+    margin: 0 auto 0 auto;
+}
