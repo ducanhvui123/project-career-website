@@ -44,3 +44,16 @@ h2
     max-width: 720px;
     margin: 0 auto 0 auto;
 }
+
+.job-title
+{
+    font-family: 'Cinzel Decorative', cursive;
+    margin-bottom: 4px;
+}
+
+.job-location
+{
+    font-family: 'Cinzel Decorative', cursive;
+    margin-bottom: 4px;
+}
+
