@@ -33,7 +33,7 @@ JOBS = [
 def index():
     return render_template("home.html", jobs=JOBS)
 
-@app.route("/quest")
+@app.route("/api/quest")
 def list_quest():
     return jsonify(JOBS)
 if __name__ == "__main__":
