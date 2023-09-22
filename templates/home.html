@@ -9,26 +9,35 @@
    
 </head>
 <body>
-   
+    {% include 'nav.html' %}
     <div id="container">
             <h1>The Hearthstone Tavern</h1>
-            <img id="banner" src="../static/tavern-banner.jpg" alt="tavern-banner">
+            <img id="banner" src="../static/banner.jpeg" alt="tavern-banner">
             <h2>About Hearthstone</h2>
-            <div class="about">
-                Greetings, brave souls and weary travelers! Welcome to "The Adventurer's Haven," where ale mugs clink, tales of valor are spun, and a world of quests awaits at your every turn.
+            <div class="row" style="margin-bottom: 16px;">
+                <div class="col-md-6">
+                    <div class="about">
+                        Greetings, brave souls and weary travelers! Welcome to "The Adventurer's Haven," where ale mugs clink, tales of valor are spun, and a world of quests awaits at your every turn.
+                    </div>
+                    <div class="about">
+                        Nestled in the heart of the enchanting Elmswood Forest, Hearthstone Tavern stands as a testament to a bygone era. It was founded centuries ago by the valiant Sir Roland Hearthstone, a renowned knight of valor and honor. Sir Roland's vision was to create a haven for weary travelers and fearless adventurers alike, a place where they could share stories, forge alliances, and embark on quests that would etch their names into the annals of legend.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="../static/party.jpeg" alt="hero-party" style="height: 320px;">
+                </div>    
             </div>
-            <div class="about">
-                I am your trusty innkeeper and questmaster, Sir Reginald the Stout-hearted. With a twinkle in my eye and a tankard in hand, I have transformed this humble tavern into a bustling hub for adventurers of all kinds.
-            </div>
-            <h2>Job available in the Tavern</h2>
+
             <div>
+                <h2>Job available in the Tavern</h2>
                 {% for job in jobs %}
                     {% include 'quest.html' %}
                 {% endfor %}
             </div>
         <div style="text-align: center;">
-            <button>Request a Raven Message</button>
+            <a href="mailto:ducanhvui123@gmail.com?subject=Question%20about%20Hearthstone%20Tavern&body=My%20question%3A%20%3CYour%20question%20goes%20here%3E%0D%0A" type="button" class="btn btn-info">Request a Raven Message</a>
         </div>
     </div>
+    {% include 'footer.html' %}
 </body>
 </html>
