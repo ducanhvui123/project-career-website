@@ -13,7 +13,7 @@
     <div id="container">
             <h1>The Hearthstone Tavern</h1>
             <img id="banner" src="../static/banner.jpeg" alt="tavern-banner">
-            <h2>About Hearthstone</h2>
+            <h2 style="margin: 20px 0 20px 0;">About Hearthstone</h2>
             <div class="row" style="margin-bottom: 16px;">
                 <div class="col-md-6">
                     <div class="about">
@@ -29,7 +29,7 @@
             </div>
 
             <div>
-                <h2>Job available in the Tavern</h2>
+                <h2 style="margin: 20px 0 20px 0;">Job available in the Tavern</h2>
                 {% for job in jobs %}
                     {% include 'quest.html' %}
                 {% endfor %}
