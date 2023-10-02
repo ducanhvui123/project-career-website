@@ -1,37 +1,13 @@
 from flask import Flask, render_template, jsonify
-
+from database import load_jobs_from_db
 app = Flask(__name__)
 
-JOBS = [
-    {
-        'id': 1,
-        'title': 'Hunt the Mischievous Slimes',
-        'location': 'The Murky Marshlands',
-        'salary': '10 Gold Pieces'
-    },
-    {
-        'id': 2,
-        'title': 'Medicinal Herb Gathering ',
-        'location': 'The Enchanted Forest',
-        'salary': ' 50 Silver Shillings'
-    },
-    {
-        'id': 3,
-        'title': 'Dragon Slaying',
-        'location': 'The Volcanic Peaks',
-        'salary': '1,000 Gold Pieces'
-    },
-    {
-        'id': 4,
-        'title': 'Wagon Escort ',
-        'location': 'The Bandit-Infested Pass',
-        'salary': '100 Gold Pieces'
-    },
-]
 
 @app.route("/")
 def index():
-    return render_template("home.html", jobs=JOBS)
+    # call the function to load the information from database
+    jobs = load_jobs_from_db()
+    return render_template("home.html", jobs=jobs)
 
 @app.route("/api/quest")
 def list_quest():
@@ -42,3 +18,6 @@ if __name__ == "__main__":
 @app.route("/login")
 def login():
     return render_template("login.html")
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=True)
