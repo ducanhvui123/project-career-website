@@ -1,6 +1,12 @@
 from sqlalchemy import create_engine, text
 import os
-db_connection_string = "mysql+pymysql://o0ncl5audrai0bjvjync:pscale_pw_UMUlhM5Laop0vmvMgxxh99GXonzRrxOKLS7lAKEIdnM@gcp.connect.psdb.cloud/hearthstonetavern?charset=utf8mb4"
+from dotenv import load_dotenv
+
+# secure your db_connection_information
+load_dotenv()
+db_connection_string = os.getenv("DATABASE_URL")
+
+# engine connect
 engine = create_engine(
     db_connection_string,
     connect_args={
