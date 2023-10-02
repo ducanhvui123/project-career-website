@@ -1,5 +1,12 @@
 from flask import Flask, render_template, jsonify
 from database import load_jobs_from_db
+from dotenv import load_dotenv
+import os
+
+
+# secure your db_connection_information
+load_dotenv()
+db_connection_string = os.getenv("DATABASE_URL")
 app = Flask(__name__)
 
 
@@ -11,9 +18,8 @@ def index():
 
 @app.route("/api/quest")
 def list_quest():
-    return jsonify(JOBS)
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
+    jobs = load_jobs_from_db()
+    return jsonify(jobs)
 
 @app.route("/login")
 def login():
