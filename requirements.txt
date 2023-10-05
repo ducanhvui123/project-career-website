@@ -2,3 +2,5 @@ flask
 gunicorn
 sqlalchemy
 pymysql
+dotenv
+os
