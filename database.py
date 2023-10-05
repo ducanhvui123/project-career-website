@@ -20,11 +20,11 @@ def load_jobs_from_db():
     # connect database:
     with engine.connect() as conn:
         result = conn.execute(text("select * from jobs"))
-        rows = result.fetchall()  # Use fetchall() to retrieve all rows
         # create a job dictionary
         jobs = []
 
-        for row in rows:
+        for row in result:
             # Create a dictionary for each row by combining column names and values
             jobs.append(dict(row))
         return jobs
+    
