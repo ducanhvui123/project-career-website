@@ -26,6 +26,5 @@ def load_jobs_from_db():
 
         for row in rows:
             # Create a dictionary for each row by combining column names and values
-            job = dict(zip(row.keys(), row))
-            jobs.append(job)
+            jobs.append(dict(row))
         return jobs
