@@ -1,12 +1,6 @@
 from flask import Flask, render_template, jsonify
 from database import load_jobs_from_db
-from dotenv import load_dotenv
-import os
 
-
-# secure your db_connection_information
-load_dotenv()
-db_connection_string = os.getenv("DATABASE_URL")
 app = Flask(__name__)
 
 
