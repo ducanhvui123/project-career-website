@@ -1,0 +1,24 @@
+<h4>Quest Application Form</h4>
+<form action="/quest/{{job['id']}}/apply" method="post">
+    <div class="mb-2">
+        <label for="">Your name</label><br>
+        <input type="text" name="full-name" placeholder="ex: Gandalf the white">
+    </div>
+    <div class="mb-2">   
+        <label for="">Email</label><br>
+        <input type="text" name="email" placeholder="ex: gandalfthewhite@gmail.com">
+    </div>  
+        <label for="">Your profession</label><br>
+        <input type="text" name="profession" placeholder="ex: Mage"> 
+    <div class="mb-2">
+        <label for="">Your abilities</label><br>
+        <textarea name="abilities" id="" ></textarea>
+    </div>
+
+    <div class="mb-2">
+        <label for="">Your experience</label><br>
+        <textarea name="experience" id=""></textarea>
+    </div>
+
+    <input type="submit" name="Submit">
+</form>

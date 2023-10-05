@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Application Submitted</title>
+    {% include 'bootstrap.html' %}
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div id="container">
+        <img style="margin-bottom: 30px;" id="banner" src="/static/banner.jpeg" alt="tavern-banner">
+        <h2>Hearthstone Tavern</h2>
+        <h4>Full Name</h4>
+        <div>{{application['full-name']}}</div>
+
+        <h4>Email</h4>
+        <div>{{ application['email'] }}</div>
+        
+        <h4>Profession</h4>
+        <div>{{ application['profession'] }}</div>
+
+        <h4>Abilities</h4>
+        <div>{{ application['abilities'] }}</div>
+
+        <h4>Experience</h4>
+        <div>{{ application['experience'] }}</div>
+    </div>    
+
+</body>
+{% include 'footer.html' %}
+</html>

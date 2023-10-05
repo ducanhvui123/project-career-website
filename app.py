@@ -1,7 +1,8 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from database import load_jobs_from_db, load_job_from_db
 
 app = Flask(__name__)
+app.config['STATIC_FOLDER'] = 'static'
 
 
 @app.route("/")
@@ -25,6 +26,13 @@ def show_quest(id):
     if not job:
         return "Not Found", 404
     return render_template('questpage.html', job=job)
+
+@app.route("/quest/<id>/apply", methods=["POST"])
+def apply_to_job(id):
+    data = request.form
+    # store in db
+    # display data and acknowledgeemnt
+    return render_template("application_submitted.html", application = data)
 
 
 if __name__ == "__main__":
