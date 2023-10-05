@@ -16,15 +16,24 @@ engine = create_engine(
     }
 )
 
-def load_jobs_from_db():
-    # connect database:
-    with engine.connect() as conn:
-        result = conn.execute(text("select * from jobs"))
-        # create a job dictionary
-        jobs = []
+# def load_jobs_from_db():
+#     # connect database:
+#     with engine.connect() as conn:
+#         result = conn.execute(text("select * from jobs"))
+#         # create a job dictionary
+#         jobs = []
 
-        for row in result:
-            # Create a dictionary for each row by combining column names and values
-            jobs.append(dict(row))
-        return jobs
+#         for row in result:
+#             # Create a dictionary for each row by combining column names and values
+#             jobs.append(dict(row))
+#         return jobs
     
+def load_jobs_from_db():
+    # Connect to the database
+    with engine.connect() as conn:
+        result = conn.execute(text("SELECT * FROM jobs"))
+        
+        # Create a list of dictionaries
+        jobs = [dict(row) for row in result]
+        
+    return jobs
