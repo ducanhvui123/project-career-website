@@ -50,3 +50,16 @@ def add_application_to_db(job_id, data):
                      profession = data["profession"],
                      abilities = data["abilities"],
                      experience = data["experience"])
+        
+
+def add_new_quest_to_db(data):
+    with engine.connect() as conn:
+        query = text("INSERT INTO jobs (title, location, salary, currency, responsibilities, requirements) VALUES (:title, :location, :salary, :currency, :responsibilities, :requirements)")
+
+        conn.execute(query,
+                     title = data["title"],
+                     location = data["location"],
+                     salary = data["salary"],
+                     currency = data["currency"],
+                     responsibilities = data["responsibilities"],
+                     requirements = data["requirements"])

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quest request</title>
+    {% include 'bootstrap.html' %}
+</head>
+<body id="container">
+    {% include 'nav.html' %}
+    <div class="row">
+        <div class="col-md-6">
+            <form action="/quest/request" method="post">
+                <div class="mb-2">
+                    <label>Quest title</label><br>
+                    <input type="text" required name="title" placeholder="ex: Hunt the slime">
+                </div>
+
+                <div class="mb-2">
+                    <label>Quest location</label><br>
+                    <input type="text" required name="location" placeholder="ex: Enchanted Forest">
+                </div>
+
+                <div class="mb-2">
+                    <label>Quest payout range</label><br>
+                    <input type="text" required name="salary" placeholder="ex: 10">
+                </div>
+
+                <div class="mb-2">
+                    <label>Quest payout currency</label><br>
+                    <input type="text" required name="currency" placeholder="ex: gold pieces">
+                </div>
+
+                <div class="mb-2">
+                    <label>Quest responsibilities</label><br>
+                    <input type="text" required name="responsibilities" placeholder="ex: Must be proficient in hunting">
+                </div>
+
+                <div class="mb-2">
+                    <label>Quest requirements</label><br>
+                    <input type="text" required name="requirements" placeholder="ex: The adventurer must be skilled in both combat and magical arts, as they may encounter magical obstacles">
+                </div>
+                <input type="submit" name="Submit">
+            </form>
+        </div>
+        <div class="col-md-6">
+            <img src="../static/party.jpeg" alt="hero-party" style="height: 320px;">
+        </div>
+    </div> 
+</body>
+    {% include 'footer.html' %}

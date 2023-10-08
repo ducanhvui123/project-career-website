@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quest Submitted</title>
+    {% include 'bootstrap.html' %}
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div id="container">
+        <img style="margin-bottom: 30px;" id="banner" src="/static/banner2.jpeg" alt="tavern-banner">
+        <h1>Hearthstone Tavern</h1>
+
+        <p style="text-align: center;">Your request for the quest of <b>{{ data['title']}}</b> at Hearthstone Tavern has been submitted, We will get back to you soon</p>
+        <b class="mb-0">Quest title</b>
+        <div class="mb-2">{{data['title']}}</div>
+
+        <b>Quest location</b>
+        <div class="mb-2">{{ data['location'] }}</div>
+        
+        <b>Quest payout</b>
+        <div class="mb-2">{{ data['salary'] }}</div>
+
+        <b>Quest payout currency</b>
+        <div class="mb-2">{{ data['currency'] }}</div>
+
+        <b>Quest responsibilities</b>
+        <div class="mb-2">{{ data['responsibilities'] }}</div>
+
+        <b>Quest requirements</b>
+        <div class="mb-2">{{ data['requirements'] }}</div>
+    </div>  
+</body>
+
+{% include 'footer.html' %}
+</html>

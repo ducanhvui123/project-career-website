@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from database import load_jobs_from_db, load_job_from_db, add_application_to_db
+from database import load_jobs_from_db, load_job_from_db, add_application_to_db, add_new_quest_to_db
 
 app = Flask(__name__)
 app.config['STATIC_FOLDER'] = 'static'
@@ -36,6 +36,16 @@ def apply_to_job(id):
     # display data and acknowledgeemnt
     return render_template("application_submitted.html", application = data, job = job)
 
+@app.route("/quest/request", methods=['GET', 'POST'])
+def quest_request():
+    if request.method == 'POST':
+        # store form data into a dictionary
+        data = request.form
+        #store new data into the database
+        add_new_quest_to_db(data)
+        return render_template("quest_submitted.html", data = data)
+    else:
+        return render_template("quest_request.html")
 
 
 
