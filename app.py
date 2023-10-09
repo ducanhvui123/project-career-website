@@ -33,7 +33,7 @@ def apply_to_job(id):
     job = load_job_from_db(id)
     # store in db
     add_application_to_db(id, data)
-    # display data and acknowledgeemnt
+    # display data and acknowledgement
     return render_template("application_submitted.html", application = data, job = job)
 
 @app.route("/quest/request", methods=['GET', 'POST'])

@@ -12,13 +12,13 @@
         <p class="lead mt-0 job-location" style="font-weight: bold;">{{ job['location'] }}</p>
         <h4>Requirements</h4>
         <ul>
-            {% for line in job['requirements'].split("/n") %}
+            {% for line in job['requirements'].split(".") %}
             <li>{{ line }}</li>
             {% endfor %}
         </ul>
         <h4>Responsibilities</h4>
         <ul>
-            {% for line in job['responsibilities'].split("/n") %}
+            {% for line in job['responsibilities'].split(".") %}
             <li>{{ line }}</li>
             {% endfor %}
         </ul>

@@ -5,11 +5,10 @@
             <b>Location: </b>{{ job['location'] }}
         </div>
         <div class="job-location">
-            <b>Salary:</b> {{ job['salary'] }}
+            <b>Salary:</b> {{ job['salary'] }} {{ job['currency'] }}
         </div>
     </div>
     <div class="col-3">
         <a href="/quest/{{job['id']}}" id="embark" type="button" class="btn btn-success">Embark</a>
     </div>
-    
 </div>
